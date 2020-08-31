@@ -1,0 +1,180 @@
+/* You can add global styles to this file, and also import other style files */
+.modal{
+    background: rgb(1, 1, 1, 0.6);
+}
+
+body{
+    background-color: #eee;
+}
+
+.Container{
+    background-color: #F4F4F4;
+}
+
+.close{
+    opacity: 0.8;
+}
+
+.modal-content{
+    box-shadow: none;
+}
+
+.text, .text-bold{
+    font-family: 'PTSans-Regular';
+    text-transform: none;
+    letter-spacing: normal;
+    font-size: 12pt;
+    color: #565656;
+}
+
+.text-7{
+    font-size: 7pt;
+}
+
+.text-8{
+    font-size: 8pt;
+}
+
+.text-9{
+    font-size: 9pt;
+}
+
+.text-10{
+    font-size: 10pt;
+}
+
+.text-11{
+    font-size: 11pt;
+}
+
+.text-14{
+    font-size: 14pt;
+}
+
+.text-13{
+    font-size: 13pt;
+}
+
+.text-16{
+    font-size: 16pt;
+}
+
+.text-18{
+    font-size: 18pt;
+}
+
+.text-bold{
+    font-family: 'PTSans-Bold';
+}
+
+.color-blue{
+    color: #00D7FF !important;
+
+}
+.color-dark-blue{
+    color: #0eb3d2 !important;
+}
+
+.color-red{
+    color: #FF4444 !important;
+}
+
+.color-black{
+    color: black !important;
+}
+
+.color-white{
+    color: white !important;
+}
+
+.background-pink{
+    background-color: #FFECEC;
+}
+
+.background-blue{
+    background-color: #00D7FF;
+}
+
+.hover:hover{
+    cursor: pointer;
+}
+
+.my-btn{
+    border: none;
+    background-color: white;
+}
+
+.form-control{
+    border-color: #E8E8E8;
+    border-radius: 4px;
+}
+
+.form-control:focus{
+    outline: none !important;
+    border:1px solid #00D7FF;
+    box-shadow: 0px 0px 1px 4px rgb(14, 179, 210, 0.2);
+}
+
+.form-control::-webkit-input-placeholder {
+    font-family: 'PTSans-Regular';
+    font-size: 12pt;
+    color:#cfcfcf; 
+}
+
+.form-control::-moz-placeholder {
+   font-family: 'PTSans-Regular';
+   font-size: 12pt;
+   color: #cfcfcf; 
+}
+
+.btn{
+    border-radius: 4px;
+    background: none;
+    border: none;
+    width: 140px;
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn:hover{
+    background-color: transparent;
+}
+
+.btn-primary {
+    background-color: #00D7FF !important;
+    border: none;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    background-color: #00B2D3 !important;
+    border: none;
+}
+
+.btn-danger {
+    color: #FF4444 !important;
+    background-color: #FFECEC !important;
+    border: none;
+}
+.btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active, .open>.dropdown-toggle.btn-danger {
+    color: #FFECEC !important;
+    background-color: #FF4444  !important;
+    border: none;
+}
+
+.card{
+    border-radius: 5px;
+}
+
+.ButtonMenu
+{
+    border-radius: 27%;
+    border: none;
+    padding: 5px 10px;
+    color: #28253b;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

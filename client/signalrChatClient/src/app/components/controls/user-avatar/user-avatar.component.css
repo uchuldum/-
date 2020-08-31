@@ -1,0 +1,46 @@
+.user-avatar {
+    display: inline-block;
+    text-align: center;
+    border: 2px solid #eee;
+    border-radius: 50%;
+    width: 76px;
+    height: 76px;
+    padding: 2px;  
+    z-index: -3;
+  }
+  
+img {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    z-index: 100;
+}
+
+.opacity{
+    position: absolute;
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background:  url("../../../../assets/images/profile.jpg") rgba(0,0,0, 0.1) no-repeat;
+    background-size: cover;
+    opacity: 100%;
+    z-index: 0;
+}
+
+.opacity:hover{
+    cursor: pointer;
+    opacity: 50%;
+}
+
+.user-avatar.is-empty {
+    padding-top: 4px;
+    background-color: #fff;
+    border: 1px solid rgba(220, 205, 205, 0.49);
+}
+
+
+
+.user-avatar.is-empty img {
+    width: 75px;
+    height: 75px;
+}

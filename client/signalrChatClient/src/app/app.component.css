@@ -1,0 +1,23 @@
+.Item
+{
+    background: white;
+    border-radius: 4px;
+    padding: 0.3rem 0px;
+    transition: all 0.3s linear;
+    margin-top: 10px;
+}
+
+.green-line, .red-line{
+    border-left: solid 5px #58d37d;
+}
+.red-line{
+    border-color: #ff4444;
+}
+
+.common-input::-webkit-input-placeholder {
+    font-family: 'PTSans-Regular';
+}
+
+.common-input::-moz-placeholder {
+    font-family: 'PTSans-Regular';
+}

@@ -1,0 +1,44 @@
+<div class="Menu d-flex " on-mouseover='over()'>
+  <div class="row m-0 h-100">
+      <div *ngIf="newMessage" class="text color-white" style="position: absolute; margin-left: 10px;">
+        <fa-icon class="icon" [icon]="faBell" style="color:yellow;"></fa-icon>
+      </div>
+      <div class="my-auto" style="color: white;">       
+          <div class="TLines ml-1">
+              <span class="TLines_span"></span>
+          </div>          
+      </div>
+  </div>
+  <div class="h-100 w-100 ml-2 MenuBlock">
+      <div class="TitleMenu mb-5 mt-3">Общий чат</div>
+      <div class="new-message">
+        <div class="d-flex justify-content-start">  
+          <input type="text" class="form-control form-control-sm" [(ngModel)]="txtMessage" (keydown.enter)="sendMessage()" placeholder="Введите сообщение" />  
+          <div type="button" class="btn btn-primary ml-2" (click)="sendMessage()">
+            <span class="text">
+              Отправить
+            </span>
+          </div>
+        </div> 
+      </div>
+      <div *ngIf="messages && messages.length > 0" class="messages-container mt-2">
+        <div class="d-flex justify-content-start" *ngFor="let msg of messages; index as i">
+          <div class="author text color-white">
+            <span *ngIf="msg.sourceNickName == nickName; else other">
+              Вы
+            </span>
+            <ng-template #other>
+              {{msg.sourceNickName}}
+            </ng-template>
+             :
+          </div>
+          <div class="author text color-white ml-2">
+            {{msg.text}}
+          </div>
+          <div class="date text color-white ml-2">
+            ({{msg.sendDate | date: 'dd.MM hh:mm'}})
+          </div>
+        </div>
+      </div>
+  </div>
+</div>

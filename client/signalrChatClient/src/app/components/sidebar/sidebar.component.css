@@ -1,0 +1,135 @@
+button{
+    outline: none!important;
+}
+.TitleMenu{
+    color: white;
+}
+.Menu
+{
+    position: fixed;
+    height: 100%;
+    width: 2%;
+    background:#1B1D27;
+    transition: all 0.4s ease-out;
+    z-index: 3000;
+    top: 0;
+}
+.Menu:hover
+{
+    width: 30%;
+}
+.TLines {
+    position: relative;
+    width: 25px;
+    height: 20px;
+}
+    .TLines:before,
+    .TLines:after {
+        content: '';
+        background-color: white;
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        left: 0;
+        border-radius: 4px;
+        transition: all 0.2s linear;
+    }
+    .TLines:before {
+        top:0;
+    }
+    .TLines:after {
+        bottom: 0;
+    }
+    .TLines_span.active {
+        width: 0;
+        left:50%;
+    }
+    .Menu:hover .TLines:before {
+    top:45%;
+    transform: rotate(45deg);
+}
+.Menu:hover .TLines:after {
+    bottom:35%;
+    transform: rotate(-45deg);
+}
+.Menu:hover .TLines
+{
+    left: 0;
+}
+.MenuBlock
+{
+    display: none;
+}
+.Menu:hover .MenuBlock
+{
+    display: block;
+}
+.MenuItem
+{
+    width: 100%;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    font-family: 'PTSans-Bold';
+    color: white;
+    padding: 1rem 0;
+    font-size: 12pt;
+    border: none;
+    background: none;
+    text-align: center;
+}
+.MenuItem:hover
+{
+    background: #30ceec;
+}
+.MenuSecond{
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    position: absolute;
+    left: 100%;
+    display: block;
+    width: 0%;
+    transition: all 0.4s ease-in;
+    background: #30ceec;
+    top: -150%;
+}
+.MenuSecondMain
+{
+    position: relative;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+.MenuItemSecond
+{
+    width: 0%;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    font-family: 'PTSans-Bold';
+    color: white;
+    padding: 1rem 0;
+    font-size: 12pt;
+    border: none;
+    text-align: center;
+    background: none;
+    white-space: nowrap;
+    transition: all 0.3s ease-in;
+    visibility: hidden;
+    opacity: 0;
+}
+.MenuItemSecond:hover
+{
+    background: #00D7FF;
+}
+.MenuSecondMain:hover .MenuSecond
+{
+    width: 100%;
+}
+
+.MenuSecondMain:hover .MenuItemSecond
+{
+    width: 100%;
+    visibility: visible;
+    opacity: 1;
+}
+

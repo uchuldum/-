@@ -1,0 +1,102 @@
+<div class="main">
+  <app-sidebar *ngIf="isConnected && isHistory" [nickName]="nickName" [history]="messagesHistory"></app-sidebar>
+  <div class="container">  
+    <h3 class="text-center text-bold text-16">{{title}}</h3>  
+  
+    <div *ngIf="!isConnected" class="login-container d-flex justify-content-start">  
+      <input type="text" class="form-control form-control-sm common-input" [(ngModel)]="nickName" (keydown.enter)="login()" placeholder="Введите ваш никнейм" />  
+      <div type="button" class="btn btn-primary ml-2 m-0" (click)="login()">
+        <span class="text-bold color-white">
+          Войти
+        </span>
+        
+      </div>
+    </div>
+  
+    <div *ngIf="isConnected">
+      <div  class="Item box box-sm hover" *ngFor="let user of connectedUsers; index as i;" (click)="getDialog(user)">
+        <div class="box-content box-content-sm" style="padding-left: 6px;">
+            <div [ngClass]="user.state == true ? 'd-flex align-items-center w-100 p-1 red-line' : 'd-flex align-items-center w-100 p-1 green-line'" class="">
+                <div class="flex-column col-sm-2  p-0">
+                    <div class="d-flex justify-content-center">
+                      <user-avatar [avatarID]="user.avatarID"></user-avatar>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-start flex-column col-sm-3 p-0">
+                    <div class="top-line">
+                        <a>
+                            <span class="color-dark-blue text">
+                                {{user.nickName}}
+                            </span>
+                        </a> 
+                    </div>
+                </div>
+                <div class="flex-column col-sm-3 p-0">
+                    <div class="top-line">
+                        <span *ngIf="user.lastVizit && user.state == 1; else noLastVisit" class="text">
+                            Был(а) в сети: {{user.lastVizit | date: 'dd.MM.yyyy hh:mm'}}
+                        </span>
+                        <ng-template #noLastVisit>
+                            <span>
+                                &nbsp;
+                            </span>
+                        </ng-template>
+                    </div>
+                </div>
+                <div class="flex-column col-sm-3 p-0">
+                  <div class="top-line">
+                    <div *ngIf="user.newMessage && user.nickName != nickName" class="text color-white" style="position: absolute; margin-left: 10px;">
+                      <fa-icon class="icon" [icon]="faBell" style="color:red;"></fa-icon>
+                    </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  <!--
+  
+    <div class="messaging">  
+      <div class="inbox_msg">  
+        <div class="mesgs">  
+          <div class="msg_history">  
+            <div *ngFor="let msg of messages">  
+            <div class="incoming_msg">  
+              <div class="incoming_msg_img"> </div>  
+              <div class="received_msg">  
+                <div class="received_withd_msg">  
+                  <p>  
+                   {{msg.text}}   
+                  </p>  
+                  <span class="time_date"> {{msg.sendDate | date:'medium'}} </span>  
+                </div>  
+              </div>  
+            </div>  
+            <div class="outgoing_msg" *ngIf="msg.type == 'sent'">  
+              <div class="sent_msg">  
+                <p>  
+                    {{msg.text}}   
+                </p>  
+                <span class="time_date"> {{msg.sendDate | date:'medium'}}</span>  
+              </div>  
+            </div>  
+          </div>  
+          </div>  
+          <div class="type_msg">  
+            <div class="d-flex justify-content-start">  
+              <input type="text" class="form-control form-control-sm" [value]="txtMessage"  
+              (input)="txtMessage=$event.target.value" (keydown.enter)="sendMessage()" placeholder="Введите сообщение" />  
+              <div type="button" class="btn btn-primary m-0" (click)="sendMessage()">
+                Отправить
+              </div>
+            </div>  
+          </div>  
+        </div>  
+      </div>  
+    
+    </div>  
+    -->
+  </div>
+</div>
+
+
